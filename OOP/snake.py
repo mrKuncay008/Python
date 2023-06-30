@@ -1,26 +1,26 @@
-# class Snake: # class Snake
+class Snake: # class Snake
 
-#     def __init__(self):
-#         self.victims = 1
+    def __init__(self):
+        self.victims = 1
 
-#     def increment(self):
-#         self.victims += 1
+    def increment(self):
+        self.victims += 1
 
-# class Mouse:
-#     def __init__(self):
-#         if Snake != Mouse:
-#             self.victims - 1
+class Mouse:
+    def __init__(self):
+        if Snake != Mouse:
+            self.victims - 1
 
-# if __name__ == '__main__':
-#     print("Hallo ini ", Mouse,"and",Snake)
-# else:
-#     print("Hallo ini ", Mouse.__name__,"and",Snake.__name__)
+if __name__ == '__main__':
+    print("Hallo ini ", Mouse,"and",Snake)
+else:
+    print("Hallo ini ", Mouse.__name__,"and",Snake.__name__)
     
-# print(Snake.__module__)
-# print(Snake.__name__," ", Mouse.__name__)
-# print(Snake.__subclasses__, "\n", Mouse.__dict__)
+print(Snake.__module__)
+print(Snake.__name__," ", Mouse.__name__)
+print(Snake.__subclasses__, "\n", Mouse.__dict__)
 
-# print(Snake, "Makan", Mouse)
+print(Snake, "Makan", Mouse)
 
 # def f(x):
 #     try:
