@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import messagebox
-import locale
 
 app = Tk()
 app.title('Aplikasi Toko Buku Pren')
@@ -44,7 +43,6 @@ def clear():
 
 # ===== UI Design =+====
 
-locale.setlocale(locale.LC_ALL, '')
 # Ukuran dan Background Warna 
 
 app.geometry('750x600')
