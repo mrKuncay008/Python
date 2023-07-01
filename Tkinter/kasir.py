@@ -1,8 +1,9 @@
 from tkinter import *
 from tkinter import messagebox
+import locale
 
 app = Tk()
-app.title('Aplikasi Toko Aisma')
+app.title('Aplikasi Toko Buku Pren')
 
 # variable
 ap = StringVar()
@@ -21,9 +22,9 @@ def totalbeli():
 	hs = int(s.get()) * 165000
 	hk = int(k.get()) * 123000
 	hd = int(db.get()) * 119000
-
+	global total
 	total = ha + hs + hk + hd
-	t_total.set(int()(total))
+	t_total.set(locale.format_string("%d", total, grouping=True))
 
 def kembali():
 	global total
@@ -31,7 +32,7 @@ def kembali():
 
 	if uang >= total:
 		kembali = uang - total
-		messagebox.showinfo(message='kembalian anda sebesar{}'.format(int(kembali)))
+		messagebox.showinfo(message='kembalian anda sebesar{}'.format(kembali))
 
 def clear():
 	ap.set('0')
@@ -43,11 +44,13 @@ def clear():
 
 # ===== UI Design =+====
 
+locale.setlocale(locale.LC_ALL, '')
 # Ukuran dan Background Warna 
+
 app.geometry('750x600')
 app.configure(bg='Blue')
 # Judul
-Label(app, text='KASIR TOKO AISMA', 
+Label(app, text='KASIR TOKO BUKU PREN', 
 	bg='#E9E4E3', foreground='#323232', font='arial 18 bold').place(x=200, y=30)
 # Label Menu
 
@@ -72,11 +75,11 @@ Label(app, text = '119.000', bg='#31c6d4', foreground='#fef5ac',font='arial 12 b
 # Spinbox
 Spinbox(app, from_=0,to=100,width=4,font='arial 10',textvariable=ap,command=totalbeli).place(x=550, y=100)
 
-Spinbox(app, from_=0,to=100,width=4,font='arial 10',textvariable=ap,command=totalbeli).place(x=550, y=140)
+Spinbox(app, from_=0,to=100,width=4,font='arial 10',textvariable=s,command=totalbeli).place(x=550, y=140)
 
-Spinbox(app, from_=0,to=100,width=4,font='arial 10',textvariable=ap,command=totalbeli).place(x=550, y=180)
+Spinbox(app, from_=0,to=100,width=4,font='arial 10',textvariable=k,command=totalbeli).place(x=550, y=180)
 
-Spinbox(app, from_=0,to=100,width=4,font='arial 10',textvariable=ap,command=totalbeli).place(x=550, y=220)
+Spinbox(app, from_=0,to=100,width=4,font='arial 10',textvariable=db,command=totalbeli).place(x=550, y=220)
 
 # Laber Pembayaran
 Label(app,text='Masukan Uang Anda', bg='#31c6d4',foreground='#fef5ac',font='arial 12').place(x= 200,y=280)
