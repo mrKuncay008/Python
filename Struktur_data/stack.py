@@ -5,8 +5,7 @@ kucing = []
 kucing.append("mansur")
 kucing.append("Kuncay")
 kucing.append("Itam")
-
-kucing.pop()
-kucing.pop()
-
+x = input("Apa Ada kucing yang sudah tiada ?")
+if x in kucing:
+    kucing.remove(x)
 print(kucing)
