@@ -19,5 +19,8 @@ print(baju)
 nambah = ["Biru","Orange","Kuning"]
 baju.append(nambah)
 print(baju)
-baju.pop()
+# ////////////////////////////////////////////
+nambah.pop(0)
+baju.pop(0)
+baju.sort(key=lambda x: (isinstance(x, list), x)) # Mengurutkan sesuai huruf
 print(baju)
