@@ -1,16 +1,22 @@
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Maaf Tidak Bisa Noll")
+except ValueError:
+    print("Value Invalid")
+
 while True:
 	try:
-		a = int(input("Input angka: "))	
 		z = int(input("Input angka: "))
+		a = int(input("Input angka: "))
+		i = a / z
 		break
+	except ZeroDivisionError:
+		print('Sorry!,Tidak Bisa hanya 0, Masukan Angka Selain 0!!')
 	except ValueError:
 		print("Sorry !, Masukan Angka!!")
-	except ZeroDivisionError:
-		print("Sorry!,Tidak Bisa hanya 0, Masukan Angka Selain 0!!")
 
-x = a * z
-print("Hasil nya: ", x)
-
+print(i)
 # from datetime import datetime as dt
 
 # tgl = False
